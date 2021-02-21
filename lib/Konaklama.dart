@@ -70,43 +70,105 @@ class _KonaklamaState extends State<Konaklama> {
           Container(),
           Column(
             // crossAxisAlignment: CrossAxisAlignment.center,
+
             children: oteller
                 .map(
                   (e) => Container(
-                    height: 100,
-                    margin:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(11),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey[200],
-                              blurRadius: 5,
-                              spreadRadius: 3,
-                              offset: Offset(3, 4))
-                        ]),
-                    child: ListTile(
-                      leading: Image.network(
-                        e.image,
-                        fit: BoxFit.cover,
-                        width: 90,
-                        height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                    child: Card(
+                      elevation: 5.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0.0),
                       ),
-                      title: Text(
-                        e.name,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      subtitle: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(e.number.toString()),
-                          Text(e.distance.toString()),
-                        ],
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Container(
+                                  width: 70.0,
+                                  height: 70.0,
+                                  child: CircleAvatar(
+                                    backgroundImage: NetworkImage(e.image),
+                                  ),
+                                ),
+                                SizedBox(width: 7.0),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      e.name,
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Text(
+                                      e.number,
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                    SizedBox(
+                                      height: 5.0,
+                                    ),
+                                    Text(
+                                      e.distance,
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                                Column()
+                              ],
+                            ),
+                            Container(
+                              //alignment: Alignment.center,
+                              // padding: EdgeInsets.symmetric(
+                              // horizontal: 10.0, vertical: 10.0),
+                              alignment: Alignment.topRight,
+                              child: Column(
+                                children: <Widget>[
+                                  Column(
+                                    children: [
+                                      FlatButton(
+                                        onPressed: () {},
+                                        child: Icon(
+                                          Icons.call,
+                                          color: Colors.white,
+                                        ),
+                                        color: Colors.indigo,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                        ),
+                                      ),
+                                      FlatButton(
+                                        onPressed: () {},
+                                        child: Icon(Icons.location_on,
+                                            color: Colors.white),
+                                        color: Colors.indigo,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -118,6 +180,37 @@ class _KonaklamaState extends State<Konaklama> {
     );
   }
 }
+
+///////////////////////////////////////////////////////////////////////////////////
+/*
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+          child: Card(
+            elevation: 5.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0.0),
+            ),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+
+                        ),
+                    ],
+                  ),
+                  Container(),
+                ],
+              ),
+            ),
+          ),
+ */
 /*
                           ButtonTheme.bar(
                             child: new ButtonBar(
