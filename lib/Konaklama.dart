@@ -147,6 +147,7 @@ class _KonaklamaState extends State<Konaklama> {
                                     tooltip: "call",
                                     color: Colors.white,
                                   ),
+                                  width: 40,
                                   decoration: BoxDecoration(
                                     color: Colors.indigo,
                                     borderRadius: BorderRadius.only(
@@ -164,6 +165,7 @@ class _KonaklamaState extends State<Konaklama> {
                                     tooltip: "location",
                                     color: Colors.white,
                                   ),
+                                  width: 40,
                                   decoration: BoxDecoration(
                                     color: Colors.indigo,
                                     borderRadius: BorderRadius.only(
