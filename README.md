@@ -2,6 +2,10 @@
 
 A new Flutter application.
 
+### image of application
+![image1](https://github.com/brknt/pratik_rehber_app/blob/master/image1.JPG)
+![image2](https://github.com/brknt/pratik_rehber_app/blob/master/image.jpg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
