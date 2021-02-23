@@ -65,110 +65,116 @@ class _KonaklamaState extends State<Konaklama> {
         ),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(8),
         children: <Widget>[
-          Container(),
           Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.center,
 
             children: oteller
                 .map(
                   (e) => Container(
-                    width: MediaQuery.of(context).size.width,
+                    //width: MediaQuery.of(context).size.width,
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+
                     child: Card(
                       elevation: 5.0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 10.0),
+                            child: Row(
                               children: <Widget>[
-                                Container(
-                                  width: 70.0,
-                                  height: 70.0,
-                                  child: CircleAvatar(
-                                    backgroundImage: NetworkImage(e.image),
-                                  ),
-                                ),
-                                SizedBox(width: 7.0),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                Row(
                                   children: <Widget>[
-                                    Text(
-                                      e.name,
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold),
+                                    Container(
+                                      width: 70.0,
+                                      height: 70.0,
+                                      child: CircleAvatar(
+                                        backgroundImage: NetworkImage(e.image),
+                                      ),
                                     ),
                                     SizedBox(
-                                      height: 5.0,
+                                      width: 7.0,
                                     ),
-                                    Text(
-                                      e.number,
-                                      style: TextStyle(color: Colors.grey),
-                                    ),
-                                    SizedBox(
-                                      height: 5.0,
-                                    ),
-                                    Text(
-                                      e.distance,
-                                      style: TextStyle(color: Colors.grey),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          e.name,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        Text(
+                                          e.number,
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                        SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        Text(
+                                          e.distance,
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                      ],
                                     ),
                                   ],
-                                ),
-                                Column()
+                                )
                               ],
                             ),
-                            Container(
-                              //alignment: Alignment.center,
-                              // padding: EdgeInsets.symmetric(
-                              // horizontal: 10.0, vertical: 10.0),
-                              alignment: Alignment.topRight,
-                              child: Column(
-                                children: <Widget>[
-                                  Column(
-                                    children: [
-                                      FlatButton(
-                                        onPressed: () {},
-                                        child: Icon(
-                                          Icons.call,
-                                          color: Colors.white,
-                                        ),
-                                        color: Colors.indigo,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                        ),
-                                      ),
-                                      FlatButton(
-                                        onPressed: () {},
-                                        child: Icon(Icons.location_on,
-                                            color: Colors.white),
-                                        color: Colors.indigo,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                        ),
-                                      ),
-                                    ],
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 0.0, vertical: 0.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Container(
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.call),
+                                    tooltip: "call",
+                                    color: Colors.white,
                                   ),
-                                ],
-                              ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.indigo,
+                                    borderRadius: BorderRadius.only(
+                                      topRight: const Radius.circular(10.0),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 2.0,
+                                ),
+                                Container(
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.location_on),
+                                    tooltip: "location",
+                                    color: Colors.white,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.indigo,
+                                    borderRadius: BorderRadius.only(
+                                      bottomRight: const Radius.circular(10.0),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -180,61 +186,3 @@ class _KonaklamaState extends State<Konaklama> {
     );
   }
 }
-
-///////////////////////////////////////////////////////////////////////////////////
-/*
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-          child: Card(
-            elevation: 5.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(0.0),
-            ),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-
-                        ),
-                    ],
-                  ),
-                  Container(),
-                ],
-              ),
-            ),
-          ),
- */
-/*
-                          ButtonTheme.bar(
-                            child: new ButtonBar(
-                              alignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                FlatButton(
-                                  child: Icon(
-                                    Icons.add_call,
-                                    color: Colors.white,
-                                  ),
-                                  color: Color.fromRGBO(68, 153, 213, 1.0),
-                                  shape: CircleBorder(),
-                                  onPressed: () {},
-                                ),
-                                FlatButton(
-                                  child: Icon(
-                                    Icons.location_on,
-                                    color: Colors.white,
-                                  ),
-                                  color: Color.fromRGBO(68, 153, 213, 1.0),
-                                  shape: CircleBorder(),
-                                  onPressed: () {},
-                                ),
-                              ],
-                            ),
-                          ),
- */

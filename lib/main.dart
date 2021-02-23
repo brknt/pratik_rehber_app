@@ -30,14 +30,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     List<MyCard> mycard = [
-      MyCard(Colors.indigo, Icons.airline_seat_flat, 'Konaklama', true),
-      MyCard(Colors.red, Icons.directions, 'Acenteler', false),
-      MyCard(Colors.green, Icons.restaurant, 'Restoranlar', false),
-      MyCard(Colors.blueAccent, Icons.museum, 'Müzeler', false),
-      MyCard(Colors.black38, Icons.directions_boat, 'Tekne Turları', false),
-      MyCard(Colors.deepPurple, Icons.local_hospital, 'Hastane', false),
-      MyCard(Colors.deepOrange, Icons.money, 'Bankalar', false),
-      MyCard(Colors.yellow, Icons.business, 'Kamu Kurumları', false),
+      MyCard(1, Colors.indigo, Icons.airline_seat_flat, 'Konaklama', false),
+      MyCard(2, Colors.red, Icons.directions, 'Acenteler', false),
+      MyCard(3, Colors.green, Icons.restaurant, 'Restoranlar', false),
+      MyCard(4, Colors.blueAccent, Icons.museum, 'Müzeler', false),
+      MyCard(5, Colors.black38, Icons.directions_boat, 'Tekne Turları', false),
+      MyCard(6, Colors.deepPurple, Icons.local_hospital, 'Hastane', false),
+      MyCard(7, Colors.deepOrange, Icons.money, 'Bankalar', false),
+      MyCard(8, Colors.yellow, Icons.business, 'Kamu Kurumları', false),
     ];
 
     return Scaffold(
@@ -64,13 +64,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     .map(
                       (e) => InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Konaklama()),
-                          );
+                          if (e.id == 1) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Konaklama()),
+                            );
+                          } else {}
                         },
                         child: Card(
+                          elevation: 10.0, //gölgelendirme
                           color: e.isActive ? Colors.indigo : null,
                           //elevation: 3, //gölgelendirme
                           child: Column(
@@ -111,10 +114,11 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyCard {
+  final id;
   final color;
   final icon;
   final title;
   bool isActive;
 
-  MyCard(this.color, this.icon, this.title, this.isActive);
+  MyCard(this.id, this.color, this.icon, this.title, this.isActive);
 }
